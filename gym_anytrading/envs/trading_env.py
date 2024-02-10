@@ -88,7 +88,6 @@ class TradingEnv(BaseEnv):
 
         self._cfg = cfg
         self._env_id = cfg.env_id
-        
         #======== param to plot =========
         self.cnt = 0
 
