@@ -35,8 +35,8 @@ class StocksEnv(TradingEnv):
         # ======================================
 
         # set cost
-        self.trade_fee_bid_percent = 0.01  # unit
-        self.trade_fee_ask_percent = 0.005  # unit
+        self.trade_fee_bid_percent = 0.00  # unit
+        self.trade_fee_ask_percent = 0.00  # unit
 
     # override
     def _process_data(self, start_idx: int = None) -> Any:
@@ -52,7 +52,7 @@ class StocksEnv(TradingEnv):
         '''
 
         # ====== build feature map ========
-        all_feature_name = ['Close', 'Open', 'High', 'Low', 'Adj Close', 'Volume']
+        all_feature_name = ['Open', 'High', 'Low', 'Close', 'Volume']
         all_feature = {k: self.df.loc[:, k].to_numpy() for k in all_feature_name}
         # add feature "Diff"
         prices = self.df.loc[:, 'Close'].to_numpy()
