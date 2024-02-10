@@ -52,7 +52,7 @@ class StocksEnv(TradingEnv):
         '''
 
         # ====== build feature map ========
-        all_feature_name = ['Open', 'High', 'Low', 'Close', 'Volume']
+        all_feature_name = ['Close', 'Open', 'High', 'Low', 'Adj Close', 'Volume']
         all_feature = {k: self.df.loc[:, k].to_numpy() for k in all_feature_name}
         # add feature "Diff"
         prices = self.df.loc[:, 'Close'].to_numpy()
